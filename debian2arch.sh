@@ -41,7 +41,7 @@ ask_username_and_password() {
 download_and_extract_bootstrap() {
   local _
   local filename
-  wget -O- "$iso/sha1sums.txt" | grep -F "x86_64.tar.gz" >"sha1sums.txt"
+  wget -O- "$iso/sha1sums.txt" | grep -F "bootstrap-x86_64.tar.gz" >"sha1sums.txt"
   read -r _ filename <"sha1sums.txt"
   wget -O- "$iso/$filename" >"$filename"
   sha1sum -c sha1sums.txt || exit 1
